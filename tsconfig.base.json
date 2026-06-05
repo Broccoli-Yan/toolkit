@@ -1,0 +1,42 @@
+{
+  // ==================================================
+  //  所有子项目 tsconfig 必须 extends 这个文件
+  //  子项目只需覆盖: include / paths / rootDir / outDir
+  // ==================================================
+  "compilerOptions": {
+    // ---- 模块系统 ----
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "target": "ESNext",
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+
+    // ---- 输出 ----
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "noEmit": true,
+    "outDir": "${configDir}/dist",
+
+    // ---- 解析 ----
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+
+    // ---- 严格性 ----
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+
+    // ---- JSX (子项目按需覆盖) ----
+    "jsx": "preserve"
+  },
+
+  // 默认排除所有 node_modules
+  "exclude": ["**/node_modules", "**/dist", "**/.turbo"]
+}
