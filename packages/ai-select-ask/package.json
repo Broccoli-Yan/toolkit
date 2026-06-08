@@ -20,5 +20,9 @@
     "sharp": "^0.34.5",
     "typescript": "catalog:",
     "vite": "^6.3.0"
+  },
+  "dependencies": {
+    "dompurify": "^3.4.8",
+    "marked": "^18.0.5"
   }
 }

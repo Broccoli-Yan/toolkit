@@ -36,19 +36,37 @@ export function ChatInput({ onSend, disabled }: Props) {
   };
 
   return (
-    <div className="chat-input">
-      <textarea
-        ref={textareaRef}
-        value={value}
-        onChange={handleInput}
-        onKeyDown={handleKeyDown}
-        placeholder={disabled ? "请先捕获内容..." : "输入你的问题，Enter 发送"}
-        disabled={disabled}
-        rows={1}
-      />
-      <button className="send-btn" onClick={handleSend} disabled={disabled || !value.trim()}>
-        发送
-      </button>
+    <div className="chat-input-wrapper">
+      <div className="quick-actions">
+        <button
+          className="quick-btn"
+          onClick={() => onSend("请将以下内容翻译成中文")}
+          disabled={disabled}
+        >
+          英译中
+        </button>
+        <button
+          className="quick-btn"
+          onClick={() => onSend("请解释以下内容")}
+          disabled={disabled}
+        >
+          解释下
+        </button>
+      </div>
+      <div className="chat-input">
+        <textarea
+          ref={textareaRef}
+          value={value}
+          onChange={handleInput}
+          onKeyDown={handleKeyDown}
+          placeholder={disabled ? "请先捕获内容..." : "输入你的问题，Enter 发送"}
+          disabled={disabled}
+          rows={1}
+        />
+        <button className="send-btn" onClick={handleSend} disabled={disabled || !value.trim()}>
+          发送
+        </button>
+      </div>
     </div>
   );
 }
